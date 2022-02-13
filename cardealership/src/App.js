@@ -5,45 +5,77 @@ import './css/owl.css'
 import './css/bootstrap.css'
 import {
   Routes,
+  NavLink ,
   Route,
   Link
 } from "react-router-dom";
-
-
+import Carousel from 'react-bootstrap/Carousel'
+import { useState } from 'react';
+import Home from './Components/Home'
+import About from './Components/Aboutus';
+import Dashboard from './Components/Admin/Dashboard';
+import Cars from './Components/Cars';
+import Contact from './Components/Contact';
+import Notfound from './Components/404';
+import Login from './Components/Login';
+import "typeface-poppins";
 function App() {
+const [active, setActive] = useState(0)
+
   return (
     <div className="App">
-<header className="">
+<header className="header">
       <nav className="navbar navbar-expand-lg">
         <div className="container">
-          <a className="navbar-brand" href="index.html"><h2>Car Dealer <em>Website</em></h2></a>
+          <a className="navbar-brand" href="index.html"><h2>Omani American <em>Dealership</em></h2></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item active">
-                    <a className="nav-link" href="index.html">Home
-                      <span className="sr-only">(current)</span>
-                    </a>
+                <li className="nav-item">
+                <NavLink  className ="nav-link" to="/">Home</NavLink>
                 </li> 
 
-                <li className="nav-item"><a className="nav-link" href="cars.html">Cars</a></li>
+                <li className="nav-item"><NavLink  className ="nav-link" to="/cars">Cars</NavLink></li>
 
-                <li className="nav-item"><a className="nav-link" href="about-us.html">About Us</a></li>
+            
+                <li className="nav-item"><NavLink  className ="nav-link" to="/about">About Us</NavLink></li>
                 
-                <li className="nav-item"><a className="nav-link" href="contact.html">Contact Us</a></li>
+                
+                <li className="nav-item"><NavLink  className ="nav-link" to="/contact">Contact us</NavLink></li>
+                <li className="nav-item"><NavLink  className ="nav-link" to="/login">Login</NavLink></li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
+   
     <Routes>
-      <Route path = "/" element {} >
+    <Route path = "*" element={<Notfound/>}></Route>
+    <Route  path ="/about" element = {<About/>}> </Route>
+    <Route  path ="/login" element = {<Login/>}> </Route>
+    <Route path = "/cars" element={<Cars />}></Route>
+    <Route path = "/contact" element={<Contact />}></Route>
+    <Route path = "/" element={<Home />}></Route>
 
-      </Route>
+
+      
     </Routes>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="inner-content">
+              <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     </div>
+
   );
 }
 
