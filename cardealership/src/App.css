@@ -1,6 +1,10 @@
-
+.page-heading {
+  background-image: url(images/heading-1-1920x500.jpg)
+}
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 
 .App-logo {
@@ -28,6 +32,29 @@
 .App-link {
   color: #61dafb;
 }
+.img-wrapper{
+height: inherit;
+}
+.carousel-item{
+  height: 70vh;
+}
+.carousel-img{
+  width: 100% !important;
+  height: auto;
+  position: absolute;
+  bottom: -18.8vh;
+}
+
+.loginform{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+
+
+/*Admin styles*/
 
 @keyframes App-logo-spin {
   from {
