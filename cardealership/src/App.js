@@ -20,20 +20,37 @@ import Notfound from './Components/404';
 import Login from './Components/Login';
 import "typeface-poppins";
 function App() {
-const [active, setActive] = useState(0)
+const [active, setActive] = useState(false)
+
+const toggleClass = () => {
+  setActive(!active)
+}
 
   return (
     <div className="App">
 <header className="header">
       <nav className="navbar navbar-expand-lg">
+
         <div className="container">
-          <a className="navbar-brand" href="index.html"><h2>Omani American <em>Dealership</em></h2></a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <div className="logocontainer">
+            <div className="imagecontainer">
+          <img className='logoimage' src={process.env.PUBLIC_URL + "images/omaniamerican.png"} alt=""></img>
+          </div>
+          <a className="navbar-brand"><h2>Omani American <em>Dealership</em></h2></a>
+          </div>
+          {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ml-auto">
+          <div className="collapse navbar-collapse" id="navbarResponsive"> */}
+<div className={active ? "togglecontainer change": " togglecontainer menutoggler"} onClick={toggleClass}>
+  <div className="bar1"></div>
+  <div className="bar2"></div>
+  <div className="bar3"></div>
+</div>
+          <div className="menu-content">
+            <ul className={active ? "navbar-nav ml-auto" : "navbar-nav ml-auto collapsed" }>
                 <li className="nav-item">
+                  
                 <NavLink  className ="nav-link" to="/">Home</NavLink>
                 </li> 
 
@@ -46,11 +63,12 @@ const [active, setActive] = useState(0)
                 <li className="nav-item"><NavLink  className ="nav-link" to="/contact">Contact us</NavLink></li>
                 <li className="nav-item"><NavLink  className ="nav-link" to="/login">Login</NavLink></li>
             </ul>
-          </div>
+            </div>
+          {/* </div> */}
         </div>
       </nav>
     </header>
-   
+
     <Routes>
     <Route path = "*" element={<Notfound/>}></Route>
     <Route  path ="/about" element = {<About/>}> </Route>

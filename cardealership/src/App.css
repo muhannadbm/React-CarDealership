@@ -45,6 +45,7 @@ height: inherit;
   bottom: -18.8vh;
 }
 
+
 .loginform{
   margin: auto;
   display: flex;
@@ -52,8 +53,97 @@ height: inherit;
   padding: 1rem;
 }
 
+.logocontainer{
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+.imagecontainer{
+width: 6.8vw;
+height: 2rem;
+position: relative;
+margin-right: 1rem;
+}
+.logoimage{
+  width: inherit;
+}
+.navbar .navbar-brand h2 {
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 700;
+	-webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+}
+
+@media (max-width: 993px) {
+  .menu-content{
+    margin: auto;
+    position: absolute;
+    right: 3rem;
+    top: 0;
+    background: #232323;
+    width: 11rem;
+    }
+    .navbar .navbar-brand h2 {
+      display: none;
+    }
+
+    .imagecontainer{
+width: 25vw;
+height: 2rem;
+position: relative;
+margin-left: 1rem;
+      }
+    .nav-item a {
+      color: white !important;
+      padding: 15px 0px;
+    }
+    .collapsed{
+      max-height: 0;
+      overflow: hidden;
+      transition: 2s;
+    }
+    
+    
+    .menutoggler {
+      display: inline-block;
+      cursor: pointer;
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    .togglecontainer{
+      position: absolute;
+    right: 1rem;
+    top: 1rem;
+    }
+    
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+    
+}
 
 
+.container{
+  display: flex;
+}
 /*Admin styles*/
 
 @keyframes App-logo-spin {
