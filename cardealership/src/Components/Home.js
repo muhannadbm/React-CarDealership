@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import axios from 'axios'
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
+import SimpleImageSlider from "react-simple-image-slider";
 
 export default function Home () {
     const [index, setIndex] = useState(0);
@@ -10,6 +11,16 @@ export default function Home () {
     const handleSelect = (selectedIndex, e) => {
       setIndex(selectedIndex);
     };
+    
+const images = [
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+  { url: process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg' },
+
+];
     const formData = new FormData();
 
     useEffect(()=>{
@@ -41,7 +52,7 @@ export default function Home () {
       })}
     </Carousel> */}
 
-<Carousel >
+{/* <Carousel >
   <Carousel.Item  interval ={10000000}>
     <img
       className="d-block w-100"
@@ -77,7 +88,7 @@ export default function Home () {
       <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
     </Carousel.Caption>
   </Carousel.Item>
-</Carousel>
+</Carousel> */}
 
 
 
@@ -118,9 +129,15 @@ export default function Home () {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel> */}
-
-
-
+<div className="center">
+<SimpleImageSlider
+        width={896}
+        height={504}
+        images={images}
+        showBullets={true}
+        showNavs={true}
+      />
+      </div>
 
     <div className="latest-products">
       <div className="container">
@@ -132,10 +149,10 @@ export default function Home () {
             </div>
           </div>
           {console.log(cars)}
-          {cars && cars.map(el => {
+          {images && images.map(el => {
               return(          <div className="col-lg-4 col-md-6">
               <div className="product-item">
-                <a href="car-details.html"><img src={process.env.PUBLIC_URL + "images/" + el.car_image+".jpg"} alt=""></img></a>
+                <a href="car-details.html"><img src={process.env.PUBLIC_URL + "images/slider-image-1-1600x800.jpg"} alt=""></img></a>
                 <div className="down-content">
                   <a href="car-details.html"><h4>{el.car_make} {el.car_model}</h4></a>
   
