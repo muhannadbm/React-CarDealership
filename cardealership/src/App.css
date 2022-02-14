@@ -45,7 +45,9 @@ height: inherit;
   bottom: -18.8vh;
 }
 
-
+header{
+  position: fixed !important;
+} 
 .loginform{
   margin: auto;
   display: flex;
