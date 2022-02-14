@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import axios from 'axios'
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 export default function Home () {
     const [index, setIndex] = useState(0);
@@ -20,9 +21,11 @@ export default function Home () {
       console.log(cars)
     },[])
     return(<div>
-         {/* <Carousel controls={false} touch ={true} activeIndex={index} onSelect={handleSelect}>
+         {/* <Carousel prevLabel={null} nextLabel ={null}  indicators = {true} controls={true} touch ={true} activeIndex={index} onSelect={handleSelect}>
       {arr.map(el => {
- return (<Carousel.Item interval ={10000000}>
+ return (
+ 
+ <Carousel.Item interval ={10000000}>
 
  <img
    className="d-block w-100 carousel-img"
@@ -38,8 +41,8 @@ export default function Home () {
       })}
     </Carousel> */}
 
-<Carousel>
-  <Carousel.Item>
+<Carousel >
+  <Carousel.Item  interval ={10000000}>
     <img
       className="d-block w-100"
       src={process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg'}
@@ -76,6 +79,45 @@ export default function Home () {
   </Carousel.Item>
 </Carousel>
 
+
+
+{/* <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg'}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg'}
+      alt="Second slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={process.env.PUBLIC_URL + 'images/slider-image-1-1600x800.jpg'}
+      alt="Third slide"
+    />
+
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel> */}
 
 
 

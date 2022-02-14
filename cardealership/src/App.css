@@ -90,6 +90,20 @@ margin-right: 1rem;
     .navbar .navbar-brand h2 {
       display: none;
     }
+    .carousel-caption {
+      position: unset !important;
+      right: 15%;
+      bottom: 1.25rem;
+      left: 15%;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      color: #fff;
+      text-align: center;
+    }
+    .carousel {
+      position: relative;
+      height: 28vh;
+    }
 
     .imagecontainer{
 width: 25vw;
@@ -138,8 +152,33 @@ margin-left: 1rem;
       transform: rotate(45deg) translate(-8px, -8px);
     }
     
+    
 }
 
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 128%;
+  background: #232323 !important; }
+  .carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+    list-style: none;
+    background: #232323 !important;
+  }
 
 .container{
   display: flex;
